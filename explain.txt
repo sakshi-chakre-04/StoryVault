@@ -1,0 +1,82 @@
+The dotenv package in Node.js is used to load environment variables from a .env file into process.env, allowing you to manage configuration settings separately from your code
+
+| Option               | Purpose                                                                                    |
+| -------------------- | ------------------------------------------------------------------------------------------ |
+| `useNewUrlParser`    | Parses the MongoDB connection string using the new parser.                                 |
+| `useUnifiedTopology` | Uses the new Server Discovery and Monitoring engine.                                       |
+| `useFindAndModify`   | Disables deprecated MongoDB function `findAndModify()`. Uses `findOneAndUpdate()` instead. |
+
+    EXPLANATION FOR login.hbs
+🔍 Explanation by Part:
+✅ 1. HTML (HyperText Markup Language)
+The structure of the content:
+
+html
+Copy
+Edit
+<h3>...</h3>
+<div class="section">...</div>
+<a href="/auth/google" class="btn">...</a>
+This defines headings, sections, and links/buttons.
+
+✅ 2. CSS Classes from Materialize CSS
+You're using classes like:
+
+btn, red, darken-1 → from Materialize CSS framework
+
+divider → adds a horizontal line
+
+lead → a custom or framework-defined class for styled paragraphs
+
+These classes are used to style the UI quickly without writing custom CSS.
+
+✅ 3. Font Awesome Icons
+You're using Font Awesome classes:
+
+<i class="fas fa-book-reader"></i> → icon of a book reader
+
+<i class="fab fa-google left"></i> → Google logo on the left of button
+
+These are vector icons displayed using <i> tags and class names from Font Awesome.
+
+✅ 4. OAuth Link
+html
+Copy
+Edit
+<a href="/auth/google" ...>Log In With Google</a>
+This is a login with Google button that links to /auth/google, which likely triggers OAuth authentication using something like Passport.js.
+
+✅ Summary
+Language: HTML
+
+Libraries used:
+
+Materialize CSS
+
+Font Awesome
+
+Likely server-side with Node.js + Express and Passport.js (OAuth)
+
+########## METHOD OVERRIDE - npm package
+**Method Override** ek npm package hai jo Express.js apps me use hota hai. Iska kaam hai:  
+Jab HTML forms sirf GET ya POST request bhej sakte hain, lekin aapko PUT ya DELETE jaise HTTP methods bhi use karne hain (jaise RESTful APIs me hota hai), tab method-override ka use hota hai.
+
+### Kaise kaam karta hai? (How it works)
+- Aap apne form me ek hidden input field dalte ho, jaise:
+  ```html
+  <form action="/stories/123" method="POST">
+    <input type="hidden" name="_method" value="PUT">
+    <!-- baaki form fields -->
+  </form>
+  ```
+- Jab form submit hota hai, method-override middleware check karta hai ki `_method` naam ka koi field hai ya nahi.
+- Agar hai, toh Express POST request ko PUT (ya DELETE, jo bhi value di hai) me convert kar deta hai.
+
+### Kyun use karte hain? (Why do we use it?)
+- **HTML forms sirf GET aur POST support karte hain.** Lekin RESTful routes me humein PUT, PATCH, DELETE bhi chahiye hota hai (jaise update ya delete karne ke liye).
+- Method-override se hum apne backend ko RESTful bana sakte hain bina JavaScript AJAX ke, sirf simple forms se.
+
+**Short me:**  
+Method-override allow karta hai ki aap HTML form se PUT/DELETE request bhej sako, jo normally possible nahi hota.
+
+Agar aur detail chahiye ya code example chahiye toh batao!
