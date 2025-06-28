@@ -10,7 +10,6 @@ A Node.js web application for creating, sharing, and managing public and private
 - View all public stories from all users
 - Dashboard to manage your stories
 - Responsive UI with Materialize CSS
-- Rich text editing with CKEditor
 
 ## Tech Stack
 
@@ -21,47 +20,6 @@ A Node.js web application for creating, sharing, and managing public and private
 - Express-Session & connect-mongo
 - Handlebars (hbs) templating
 - Materialize CSS
-- CKEditor
-
-## Getting Started
-
-### 1. Clone the repository
-
-git clone https://github.com/sakshi-chakre-04/StoryVault.git
-cd StoryVault
-
-### 2. Install dependencies
-
-npm install
-
-### 3. Set up environment variables
-
-Create a `.env` file in the `config` folder (or use `config/config.env`) and add:
-
-PORT=3000
-NODE_ENV=development
-MONGO_URI=your_mongodb_connection_string
-GOOGLE_CLIENT_ID=your_google_client_id
-GOOGLE_CLIENT_SECRET=your_google_client_secret
-
-### 4. Run the app
-
-npm run dev
-or
-node app.js
-
-## Folder Structure
-
-StoryBooks/
-  ├── app.js
-  ├── config/
-  ├── middleware/
-  ├── models/
-  ├── public/
-  ├── routes/
-  ├── views/
-  ├── package.json
-  └── README.md
 
 ## Credits
 
